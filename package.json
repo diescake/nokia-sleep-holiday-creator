@@ -1,0 +1,27 @@
+{
+  "name": "nokia-sleep-day-off",
+  "version": "1.0.0",
+  "description": "Nokia Sleep creates a day off for you !!",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diescake/nokia-sleep-day-off.git"
+  },
+  "keywords": [
+    "nokia sleep",
+    "nodejs",
+    "joke"
+  ],
+  "author": "diescake",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diescake/nokia-sleep-day-off/issues"
+  },
+  "homepage": "https://github.com/diescake/nokia-sleep-day-off#readme",
+  "devDependencies": {
+    "moment": "^2.22.1"
+  }
+}
