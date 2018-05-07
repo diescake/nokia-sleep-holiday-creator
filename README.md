@@ -16,8 +16,9 @@ This code is tested with node.js 10.0.0
 ### Build & Launch Server
 
 ```sh
-npm start
+yarn start
 ```
+
 ## etc
 
 // For more information. see [Qiita](https://qiita.com/diescake/items/b25791eb7750c775e72f) in Japanese.
