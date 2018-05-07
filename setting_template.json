@@ -1,0 +1,3 @@
+{
+  "outgoing_webhook": "https://maker.ifttt.com/trigger/your-ifttt-webhook-name/with/key/your-ifttt-webhook-key"
+}

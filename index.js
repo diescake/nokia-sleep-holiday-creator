@@ -1,20 +1,23 @@
 'use strict';
 
 const axios = require('axios');
+const moment = require('moment');
 const express = require('express');
-const state = require('./state.json');
-
-const outgoing_webhook = 'https://maker.ifttt.com/trigger/nokia-sleep-outgoing/with/key/b4eSEBCdiXI-_bqwMEr4n2';
-
 const app = express();
+
+const setting = require('./setting.json');
+const state = require('./state.json');
 
 app.post('/api/incoming_webhook', async(req, res) => {
   console.log('incoming_webhook');
   console.table(req.params);
 
+  // time
+  console.log(state);
+
   const json = (await axios({
     method: 'post',
-    url: outgoing_webhook,
+    url: setting.outgoing_webhook,
     headers: {
       'content-type': 'application/json'
     }
