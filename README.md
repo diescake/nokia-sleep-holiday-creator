@@ -9,15 +9,15 @@ Nokia Sleep creates a day off when you are just being asleep !!
 
 ### yarn
 
+This code is tested with `node.js 10.0.0`
+
 ```sh
 yarn install
 ```
 
-This code is tested with node.js 10.0.0
-
 ### setting your webhook URL
 
-Copy the setting_template.json to setting.json and input your webhook URL on IFTTT.
+Copy and rename the `setting_template.json` to `setting.json` and input your webhook URL getting from [IFTTT](https://ifttt.com).
 
 ```sh
 cp setting_template.json setting.json
