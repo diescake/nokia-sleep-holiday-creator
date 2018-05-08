@@ -1,21 +1,17 @@
 'use strict';
 
 import fs from 'fs';
-
 const JSON_PATH = './is_sleeping.json';
 
 class SleepingStore {
   constructor() {
     try {
       this.isSleeping = JSON.parse(fs.readFileSync(JSON_PATH, 'utf-8'));
+      if (typeof this.isSleeping === 'boolean') {
+        return;
+      }
     } catch (e) {
-      this.isSleeping = false;
-      fs.writeFileSync(JSON_PATH, false);
-      return;
-    }
-
-    if (typeof this.isSleeping === 'boolean') {
-      return;
+      console.log(e);
     }
 
     this.isSleeping = false;

@@ -10,11 +10,7 @@ const observer = new SleepingObserver(store);
 observer.start();
 
 const buildResponse = ok => {
-  if (ok) {
-    return 'updated';
-  } else {
-    return 'do nothing';
-  }
+  return ok ? 'updated' : 'do nothing';
 };
 
 app.post('/api/into-bed', async (req, res) => {
