@@ -7,7 +7,7 @@ const JSON_PATH = './is_sleeping.json';
 class SleepingStore {
   constructor() {
     try {
-      this.isSleeping = fs.readFileSync(JSON_PATH);
+      this.isSleeping = JSON.parse(fs.readFileSync(JSON_PATH, 'utf-8'));
     } catch (e) {
       this.isSleeping = false;
       fs.writeFileSync(JSON_PATH, false);

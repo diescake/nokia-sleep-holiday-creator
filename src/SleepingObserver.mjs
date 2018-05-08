@@ -1,7 +1,6 @@
 'use strict';
 
 import moment from 'moment';
-moment.locale('jp');
 
 import buisiness from 'moment-business';
 import notifier from './WebhookNotifier';
