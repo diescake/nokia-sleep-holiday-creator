@@ -1,31 +1,35 @@
 'use strict';
 
-const axios = require('axios');
-const moment = require('moment');
 const express = require('express');
 const app = express();
 
-const setting = require('./setting.json');
-const state = require('./state.json');
+const store = require('./SleepingStore');
 
-app.post('/api/incoming_webhook', async(req, res) => {
-  console.log('incoming_webhook');
+const SleepingObserver = require('./SleepingObserver');
+const observer = new SleepingObserver(store);
+
+const buildResponse = (ok) => {
+  if (ok) {
+    return 'updated';
+  } else {
+    return 'do nothing';
+  }
+};
+
+app.post('/api/into-bed', async(req, rest) => {
+  console.log('into-bed');
   console.table(req.params);
 
-  // time
-  console.log(state);
+  const ok = store.setValue(true);
+  res.send(buildResponse(ok));
+});
 
-  const json = (await axios({
-    method: 'post',
-    url: setting.outgoing_webhook,
-    headers: {
-      'content-type': 'application/json'
-    }
-  })).data;
+app.post('/api/outof-bed', async(req, res) => {
+  console.log('outof-bed');
+  console.table(req.params);
 
-  console.log(json);
-  res.json(json);
-  return;
+  const ok = store.setValue(false);
+  res.send(buildResponse(ok));
 });
 
 const port = process.env.PORT || 3000;
