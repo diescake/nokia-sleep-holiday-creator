@@ -3,21 +3,20 @@
 import axios from 'axios';
 
 class WebhookNotifier {
-  constructor(webhook) {
-    this.webhook = webhook;
+  constructor() {
   }
 
-  async asyncPost() {
+  async send(webhook) {
     const json = (await axios({
       method: 'post',
-      url: setting.webhook.outgoing,
+      url: webhook,
       headers: {
         'content-type': 'application/json'
       }
     })).data;
 
-    return data;
+    return json;
   }
 }
 
-export default WebhookNotifier;
+export default new WebhookNotifier();

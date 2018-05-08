@@ -7,6 +7,7 @@ import store from './SleepingStore';
 
 import SleepingObserver from './SleepingObserver';
 const observer = new SleepingObserver(store);
+observer.start();
 
 const buildResponse = (ok) => {
   if (ok) {

@@ -1,3 +1,10 @@
 {
-  "outgoing_webhook": "https://maker.ifttt.com/trigger/your-ifttt-webhook-name/with/key/your-ifttt-webhook-key"
+  "am": {
+    "webhook": "https://maker.ifttt.com/trigger/your-ifttt-webhook-am-name/with/key/your-ifttt-webhook-key",
+    "deadline": "1000"
+  },
+  "pm": {
+    "webhook": "https://maker.ifttt.com/trigger/your-ifttt-webhook-pm-name/with/key/your-ifttt-webhook-key",
+    "deadline": "1300"
+  }
 }
