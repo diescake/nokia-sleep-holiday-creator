@@ -25,7 +25,7 @@ class TodayStateBuilder {
         }),
         isNotified: false,
         webhook: setting.pm.webhook
-      },
+      }
     };
   }
 }
@@ -42,7 +42,7 @@ class SleepingObserver {
 
     if (this.today.created_at.date !== m.date) {
       this.today = TodayStateBuilder.create();
-    } 
+    }
 
     if (!buisiness.isWeekDay(m)) {
       return; // holiday

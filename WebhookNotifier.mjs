@@ -3,8 +3,7 @@
 import axios from 'axios';
 
 class WebhookNotifier {
-  constructor() {
-  }
+  constructor() {}
 
   async send(webhook) {
     const json = (await axios({

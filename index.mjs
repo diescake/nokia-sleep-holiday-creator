@@ -9,7 +9,7 @@ import SleepingObserver from './SleepingObserver';
 const observer = new SleepingObserver(store);
 observer.start();
 
-const buildResponse = (ok) => {
+const buildResponse = ok => {
   if (ok) {
     return 'updated';
   } else {
@@ -17,7 +17,7 @@ const buildResponse = (ok) => {
   }
 };
 
-app.post('/api/into-bed', async(req, rest) => {
+app.post('/api/into-bed', async (req, rest) => {
   console.log('into-bed');
   console.table(req.params);
 
@@ -25,7 +25,7 @@ app.post('/api/into-bed', async(req, rest) => {
   res.send(buildResponse(ok));
 });
 
-app.post('/api/outof-bed', async(req, res) => {
+app.post('/api/outof-bed', async (req, res) => {
   console.log('outof-bed');
   console.table(req.params);
 

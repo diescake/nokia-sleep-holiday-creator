@@ -13,20 +13,20 @@ class SleepingStore {
 
   getValue() {
     return this.isSleeping;
-  };
+  }
 
   setValue(newValue) {
     if (this.isSleeping === newValue) {
       return false;
     }
 
-    fs.writeFile('state.json', newValue, (err) => {
+    fs.writeFile('state.json', newValue, err => {
       if (err) throw err;
     });
     isSleeping = newValue;
 
     return true;
-  };
+  }
 }
 
 export default new SleepingStore();

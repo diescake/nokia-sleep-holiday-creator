@@ -10,11 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/diescake/nokia-sleep-day-off.git"
   },
-  "keywords": [
-    "nokia sleep",
-    "nodejs",
-    "joke"
-  ],
+  "keywords": ["nokia sleep", "nodejs", "joke"],
   "author": "diescake",
   "license": "MIT",
   "bugs": {
