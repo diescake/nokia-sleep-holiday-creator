@@ -1,7 +1,7 @@
 'use strict';
 
 import fs from 'fs';
-import isSleeping from './is_sleeping.json';
+import isSleeping from '../is_sleeping.json';
 
 class SleepingStore {
   constructor() {

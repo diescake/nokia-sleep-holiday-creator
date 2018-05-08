@@ -3,9 +3,9 @@
 import express from 'express';
 const app = express();
 
-import store from './SleepingStore';
+import store from './src/SleepingStore';
 
-import SleepingObserver from './SleepingObserver';
+import SleepingObserver from './src/SleepingObserver';
 const observer = new SleepingObserver(store);
 observer.start();
 

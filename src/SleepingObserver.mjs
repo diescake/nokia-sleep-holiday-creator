@@ -3,7 +3,7 @@
 import moment from 'moment';
 import buisiness from 'moment-business';
 import notifier from './WebhookNotifier';
-import setting from './setting.json';
+import setting from '../setting/setting.json';
 
 class TodayStateBuilder {
   static create() {

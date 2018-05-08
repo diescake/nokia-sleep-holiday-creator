@@ -20,7 +20,7 @@ yarn install
 Copy and rename the `setting_template.json` to `setting.json` and input your webhook URL getting from [IFTTT](https://ifttt.com).
 
 ```sh
-cp setting_template.json setting.json
+cp ./setting/setting_template.json ./setting/setting.json
 ```
 
 ### Building & launching server
