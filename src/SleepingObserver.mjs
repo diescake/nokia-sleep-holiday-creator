@@ -57,7 +57,7 @@ class SleepingObserver {
         return; // already notified
       }
 
-      if (m.isBetween(obj.deadline, obj.deadline.add('minutes', 15))) {
+      if (m.isBetween(obj.deadline, obj.deadline.add(15, 'minutes'))) {
         notifier.send(obj.webhook);
         obj.isNotified = true;
         return;
@@ -70,7 +70,9 @@ class SleepingObserver {
       return;
     }
 
-    this.timer = setInterval(this._proc, 5000);
+    this.timer = setInterval(() => {
+      this._proc();
+    }, 5000);
   }
 
   stop() {
