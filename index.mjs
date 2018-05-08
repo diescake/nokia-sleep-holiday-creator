@@ -1,11 +1,11 @@
 'use strict';
 
-const express = require('express');
+import express from 'express';
 const app = express();
 
-const store = require('./SleepingStore');
+import store from './SleepingStore';
 
-const SleepingObserver = require('./SleepingObserver');
+import SleepingObserver from './SleepingObserver';
 const observer = new SleepingObserver(store);
 
 const buildResponse = (ok) => {

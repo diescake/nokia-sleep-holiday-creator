@@ -1,9 +1,8 @@
 'use strict';
 
-const moment = require('moment');
-const setting = require('./setting.json');
-
-const WebhookNotifier = require('./WebhookNotifier');
+import moment from 'moment';
+import setting from './setting.json';
+import WebhookNotifier from './WebhookNotifier';
 
 class SleepingObserver {
   constructor(store, deadline) {
@@ -19,4 +18,4 @@ class SleepingObserver {
   };
 }
 
-module.exports = SleepingObserver;
+export default SleepingObserver;

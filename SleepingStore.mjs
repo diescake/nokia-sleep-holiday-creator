@@ -1,7 +1,7 @@
 'use strict';
 
-const fs = require('fs');
-const isSleeping = require('./is_sleeping.json');
+import fs from 'fs';
+import isSleeping from './is_sleeping.json';
 
 class SleepingStore {
   constructor() {
@@ -29,4 +29,4 @@ class SleepingStore {
   };
 }
 
-module.exports = new SleepingStore();
+export default new SleepingStore();

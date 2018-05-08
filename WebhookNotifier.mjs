@@ -1,6 +1,6 @@
 'use strict';
 
-const axios = require('axios');
+import axios from 'axios';
 
 class WebhookNotifier {
   constructor(webhook) {
@@ -20,4 +20,4 @@ class WebhookNotifier {
   }
 }
 
-module.exports = WebhookNotifier;
+export default WebhookNotifier;
