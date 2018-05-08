@@ -17,9 +17,8 @@ const buildResponse = ok => {
   }
 };
 
-app.post('/api/into-bed', async (req, rest) => {
+app.post('/api/into-bed', async (req, res) => {
   console.log('into-bed');
-  console.table(req.params);
 
   const ok = store.setValue(true);
   res.send(buildResponse(ok));
@@ -27,7 +26,6 @@ app.post('/api/into-bed', async (req, rest) => {
 
 app.post('/api/outof-bed', async (req, res) => {
   console.log('outof-bed');
-  console.table(req.params);
 
   const ok = store.setValue(false);
   res.send(buildResponse(ok));

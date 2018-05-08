@@ -1,6 +1,8 @@
 'use strict';
 
 import moment from 'moment';
+moment.locale('jp');
+
 import buisiness from 'moment-business';
 import notifier from './WebhookNotifier';
 import setting from '../setting/setting.json';
@@ -11,7 +13,7 @@ class TodayStateBuilder {
     return {
       created_at: m,
       am: {
-        deadline: m.set({
+        deadline: m.clone().set({
           hour: setting.am.deadline.substring(0, 2),
           minute: setting.am.deadline.substring(2, 4)
         }),
@@ -19,7 +21,7 @@ class TodayStateBuilder {
         webhook: setting.am.webhook
       },
       pm: {
-        deadline: m.set({
+        deadline: m.clone().set({
           hour: setting.pm.deadline.substring(0, 2),
           minute: setting.pm.deadline.substring(2, 4)
         }),
@@ -52,12 +54,12 @@ class SleepingObserver {
       return; // out of bed
     }
 
-    for (let obj of [this.today.am, this.today.pm]) {
+    for (let obj of [this.today.pm, this.today.am]) {
       if (obj.isNotified) {
         return; // already notified
       }
 
-      if (m.isBetween(obj.deadline, obj.deadline.add(15, 'minutes'))) {
+      if (m.isBetween(obj.deadline, obj.deadline.clone().add(15, 'minutes'))) {
         notifier.send(obj.webhook);
         obj.isNotified = true;
         return;
