@@ -4,7 +4,7 @@
   "description": "Nokia Sleep creates a day off for you !!",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node --experimental-modules index.mjs"
   },
   "repository": {
     "type": "git",
