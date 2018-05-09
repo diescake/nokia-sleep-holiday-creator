@@ -27,17 +27,19 @@ class SleepingObserver {
       return; // out of bed
     }
 
-    for (let obj of [this.today.pm, this.today.am]) {
+    [this.today.pm, this.today.am].some(obj => {
       if (obj.isNotified) {
-        return; // already notified
+        return true; // already notified
       }
 
       if (m.isBetween(obj.deadline, obj.deadline.clone().add(15, 'minutes'))) {
         notifier.send(obj.webhook);
         obj.isNotified = true;
-        return;
+        return true;
       }
-    }
+
+      return false; // continue
+    });
   }
 
   start() {
