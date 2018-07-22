@@ -1,9 +1,9 @@
-# nokia-sleep-day-off
+# nokia-sleep-hoiday-creator
 
-Nokia Sleep creates a day off when you are just being asleep !!
+All you have to do is sleeping when you want to take a holiday.
 
 ![build](https://img.shields.io/badge/build-good-green.svg)
-![build](https://img.shields.io/badge/node->=8.11.1-orange.svg)
+![build](https://img.shields.io/badge/node->=10.0.0-orange.svg)
 
 ## Installing
 
@@ -23,21 +23,21 @@ cp ./setting/setting_template.json ./setting/setting.json
 
 ```js
 {
-  // for a half day
+  // Holiday for a half day
   "am": {
-    // The webhook url is fired if deadline is passed while sleeping.
+    // This webhook url is fired if the deadline is passed while sleeping.
     // I assumed that the url is getting from IFTTT.
     "webhook": "https://maker.ifttt.com/trigger/your-am-webhook/with/key/your-key",
 
-    // The deadline is a date as thresholds to post webhook.
-    // Timezone is same as your server.
-    "deadline": "1000"
+    // This deadline is a date as thresholds to post webhook.
+    // Timezone is depened on your server.
+    "deadline": "1015"
   },
 
-  // for a full day
+  // Holiday for a full day
   "pm": {
     "webhook": "https://maker.ifttt.com/trigger/your-pm-webhook/with/key/your-key",
-    "deadline": "1300"
+    "deadline": "1315"
   }
 }
 ```
@@ -50,4 +50,4 @@ yarn start
 
 ## Note
 
-// For more information. see [Qiita](https://qiita.com/diescake/items/b25791eb7750c775e72f) in Japanese.
+// For more information. see [Qiita](https://qiita.com/diescake/items/) in Japanese.

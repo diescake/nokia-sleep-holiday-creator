@@ -1,15 +1,14 @@
 {
-  "name": "nokia-sleep-day-off",
+  "name": "nokia-sleep-holiday-creator",
   "version": "1.0.0",
-  "description": "Nokia Sleep creates a day off for you !!",
+  "description": "Nokia Sleep provides special holidays for you !!",
   "main": "index.js",
   "scripts": {
-    "start": "node --experimental-modules index.mjs",
-    "prettier": "prettier *.js ./src/*.mjs"
+    "start": "node --experimental-modules index.mjs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/diescake/nokia-sleep-day-off.git"
+    "url": "git+https://github.com/diescake/nokia-sleep-hoiday-creator.git"
   },
   "keywords": [
     "nokia sleep",
@@ -19,13 +18,12 @@
   "author": "diescake",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/diescake/nokia-sleep-day-off/issues"
+    "url": "https://github.com/diescake/nokia-sleep-hoiday-creator/issues"
   },
-  "homepage": "https://github.com/diescake/nokia-sleep-day-off#readme",
+  "homepage": "https://github.com/diescake/nokia-sleep-hoiday-creator#readme",
   "devDependencies": {
     "express": "^4.16.3",
-    "moment": "^2.22.1",
-    "prettier": "^1.12.1"
+    "moment": "^2.22.1"
   },
   "dependencies": {
     "axios": "^0.18.0",
