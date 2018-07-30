@@ -8,21 +8,20 @@ class TodayStateBuilder {
     const m = moment();
     return {
       created_at: m,
+      webhook: setting.webhook,
       am: {
         deadline: m.clone().set({
-          hour: setting.am.deadline.substring(0, 2),
-          minute: setting.am.deadline.substring(2, 4)
+          hour: setting.deadline.am.substring(0, 2),
+          minute: setting.deadline.am.substring(2, 4)
         }),
-        isNotified: false,
-        webhook: setting.am.webhook
+        alreadyNotified: false
       },
       pm: {
         deadline: m.clone().set({
-          hour: setting.pm.deadline.substring(0, 2),
-          minute: setting.pm.deadline.substring(2, 4)
+          hour: setting.deadline.pm.substring(0, 2),
+          minute: setting.deadline.pm.substring(2, 4)
         }),
-        isNotified: false,
-        webhook: setting.pm.webhook
+        alreadyNotified: false
       }
     };
   }

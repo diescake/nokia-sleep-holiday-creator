@@ -28,12 +28,12 @@ class SleepingObserver {
     }
 
     [this.today.pm, this.today.am].some(obj => {
-      if (obj.isNotified) {
+      if (obj.alreadyNotified) {
         return true; // already notified
       }
 
       if (m.isBetween(obj.deadline, obj.deadline.clone().add(15, 'minutes'))) {
-        notifier.send(obj.webhook);
+        notifier.send(obj.alreadyNotified);
         obj.isNotified = true;
         return true;
       }

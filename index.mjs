@@ -9,22 +9,23 @@ import SleepingObserver from './src/SleepingObserver';
 const observer = new SleepingObserver(store);
 observer.start();
 
-const buildResponse = ok => {
-  return ok ? 'updated' : 'do nothing';
+const buildResponse = updated => {
+  return updated ? 'updated' : 'do nothing';
 };
 
 app.post('/api/into-bed', async (req, res) => {
   console.log('into-bed');
+  console.log(req);
 
-  const ok = store.setValue(true);
-  res.send(buildResponse(ok));
+  const updated = store.setValue(true);
+  res.send(buildResponse(updated));
 });
 
 app.post('/api/outof-bed', async (req, res) => {
   console.log('outof-bed');
 
-  const ok = store.setValue(false);
-  res.send(buildResponse(ok));
+  const updated = store.setValue(false);
+  res.send(buildResponse(updated));
 });
 
 const port = process.env.PORT || 3000;
